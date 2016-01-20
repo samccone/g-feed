@@ -3,11 +3,13 @@
     <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
     <link rel="import" href="components/state-provider/state-provider.html">
     <link rel="import" href="components/app-feed/app-feed.html">
+    <link rel="import" href="components/notification-detail/notification-detail.html">
   </head>
   <body>
     <template is="dom-bind" id="app">
-      <state-provider id="state-provider" state="{{state}}"></state-provider>
+      <notification-detail state="[[state]]" state-provider="[[stateProvider]]"></notification-detail>
       <app-feed state="[[state]]" state-provider="[[stateProvider]]"></app-feed>
+      <state-provider id="state-provider" state="{{state}}"></state-provider>
     </template>
   </body>
   <script>

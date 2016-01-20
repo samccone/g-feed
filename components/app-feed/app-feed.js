@@ -10,5 +10,9 @@
     getNotifications: function(notifications) {
       return notifications.base;
     },
+
+    setActiveTarget: function(e) {
+      this.stateProvider.setActiveTarget(e.model.item.id);
+    },
   });
 })();

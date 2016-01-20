@@ -4,7 +4,7 @@
   <template>
     <template is="dom-repeat" items="[[getNotifications(state.notifications.*)]]">
       <li>
-        <a target="_blank" href$="[[item.subject.latest_comment_url]]">[[item.subject.title]]</a>
+        <p on-tap="setActiveTarget">[[item.subject.title]]</p>
       </li>
     </template>
   </template>

@@ -22,5 +22,13 @@
 
       return url;
     },
+
+    setActiveTarget: function(id) {
+      this.set('state.activeTarget', id);
+    },
+
+    removeActiveTarget: function() {
+      this.set('state.activeTarget', undefined);
+    },
   });
 })();
