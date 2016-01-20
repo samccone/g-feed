@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "bower": "^1.7.2",
+    "gulp": "^3.9.0"
+  }
+}

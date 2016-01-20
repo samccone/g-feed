@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="components/state-provider/state-provider.html">
+    <link rel="import" href="components/app-feed/app-feed.html">
+  </head>
+  <body>
+    <template is="dom-bind" id="app">
+      <state-provider id="state-provider" state="{{state}}"></state-provider>
+      <app-feed state="[[state]]" state-provider="[[stateProvider]]"></app-feed>
+    </template>
+  </body>
+  <script>
+    (function() {
+      'use strict';
+
+      let app = document.body.querySelector('#app');
+
+      app.addEventListener('dom-change', () => {
+        app.state = {};
+        app.stateProvider = app.$['state-provider'];
+
+        // todo pull into a better spot
+        app.stateProvider.fetchLatestNotifications();
+      });
+    })();
+  </script>
+</html>

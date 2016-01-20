@@ -1,0 +1,12 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+
+<dom-module id="app-feed">
+  <template>
+    <template is="dom-repeat" items="[[getNotifications(state.notifications.*)]]">
+      <li>
+        <a target="_blank" href$="[[item.subject.latest_comment_url]]">[[item.subject.title]]</a>
+      </li>
+    </template>
+  </template>
+</dom-module>
+<script src="app-feed.js"></script>
