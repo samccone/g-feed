@@ -6,11 +6,15 @@
     <link rel="import" href="components/notification-detail/notification-detail.html">
   </head>
   <body>
-    <template is="dom-bind" id="app">
-      <notification-detail state="[[state]]" state-provider="[[stateProvider]]"></notification-detail>
-      <app-feed state="[[state]]" state-provider="[[stateProvider]]"></app-feed>
-      <state-provider id="state-provider" state="{{state}}"></state-provider>
-    </template>
+    <header>I am a header</header>
+    <main>
+      <template is="dom-bind" id="app">
+        <notification-detail state="[[state]]" state-provider="[[stateProvider]]"></notification-detail>
+        <app-feed state="[[state]]" state-provider="[[stateProvider]]"></app-feed>
+        <state-provider id="state-provider" state="{{state}}"></state-provider>
+      </template>
+    </main>
+    <footer>hello footer</footer>
   </body>
   <script>
     (function() {
