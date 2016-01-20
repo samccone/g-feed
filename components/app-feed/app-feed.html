@@ -2,11 +2,12 @@
 
 <dom-module id="app-feed">
   <template>
-    <template is="dom-repeat" items="[[getNotifications(state.notifications.*)]]">
+    <template is="dom-repeat" sort="sortByTimestamp" items="[[getNotifications(state.notifications.*)]]">
       <li>
         <p on-tap="setActiveTarget">[[item.subject.title]]</p>
       </li>
     </template>
   </template>
 </dom-module>
+<script src="../../node_modules/moment/moment.js"></script>
 <script src="app-feed.js"></script>

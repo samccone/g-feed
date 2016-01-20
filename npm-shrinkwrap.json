@@ -453,6 +453,11 @@
         }
       }
     },
+    "moment": {
+      "version": "2.11.1",
+      "from": "moment@*",
+      "resolved": "https://registry.npmjs.org/moment/-/moment-2.11.1.tgz"
+    },
     "multipipe": {
       "version": "0.1.2",
       "from": "multipipe@>=0.1.2 <0.2.0",
