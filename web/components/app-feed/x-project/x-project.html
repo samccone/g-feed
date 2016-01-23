@@ -1,0 +1,34 @@
+<dom-module is="x-project">
+  <template>
+    <style>
+      :host {
+        display: block;
+        margin: 8px 0;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      .headline {
+        margin-bottom: 8px;
+        display: inline-block;
+      }
+
+      .notification {
+        background: #FFF;
+        padding: 16px;
+        margin: 6px 0;
+        border-radius: 3px;
+      }
+
+    </style>
+    <b class="headline">[[project.name]]</b>
+    <ul>
+      <template is="dom-repeat" sort="sortByTimestamp" items="[[project.notifications]]">
+        <li class="notification">[[item.subject.title]]</li>
+      </template>
+    </ul>
+  </template>
+</dom-module>
+<script src="x-project.js"></script>

@@ -1,4 +1,6 @@
 (function() {
+  'use strict';
+
   Polymer({
     is: 'app-feed',
 
@@ -7,22 +9,34 @@
       stateProvider: Object,
     },
 
+    groupNotificationsByProject: function(notifications) {
+      notifications = notifications || [];
+      let ret = [];
+
+      let projectMap = notifications.reduce((prev, curr) => {
+        let repo = curr.repository.full_name;
+
+        if (prev[repo]) {
+          prev[repo].push(curr);
+        } else {
+          prev[repo] = [curr];
+        }
+
+        return prev;
+      }, {});
+
+      for (let project in projectMap) {
+        ret.push({
+          name: project,
+          notifications: projectMap[project]
+        });
+      }
+
+      return ret;
+    },
+
     getNotifications: function(notifications) {
-      return notifications.base;
-    },
-
-    setActiveTarget: function(e) {
-      this.stateProvider.setActiveTarget(e.model.item.id);
-    },
-
-    sortByTimestamp: function(a, b) {
-      a = moment(a).unix();
-      b = moment(b).unix();
-
-      if (a > b) return -1;
-      if (a < b) return 1;
-
-      return 0;
+      return this.groupNotificationsByProject(notifications.base);
     },
   });
 })();

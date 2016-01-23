@@ -1,11 +1,17 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="x-project/x-project.html">
 
 <dom-module id="app-feed">
   <template>
-    <template is="dom-repeat" sort="sortByTimestamp" items="[[getNotifications(state.notifications.*)]]">
-      <li>
-        <p on-tap="setActiveTarget">[[item.subject.title]]</p>
-      </li>
+    <style>
+      :host {
+        display: block;
+        margin: 16px;
+      }
+    </style>
+
+    <template is="dom-repeat" items="[[getNotifications(state.notifications.*)]]">
+      <x-project project="[[item]]" state="[[state]]" state-provider="[[stateProvider]]"></x-project>
     </template>
   </template>
 </dom-module>
