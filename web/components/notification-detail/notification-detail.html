@@ -2,10 +2,8 @@
 
 <dom-module id="notification-detail">
   <template>
-    <template is="dom-if" if="[[hasActiveTarget(state.activeTarget)]]">
-      <h1>[[state.activeTarget]]</h1>
-      <button on-tap="removeActiveTarget">Remove active target</button>
-    </template>
+    <h1>[[state.activeTarget]]</h1>
+    <button on-tap="removeActiveTarget">Remove active target</button>
   </template>
 </dom-module>
 <script src="notification-detail.js"></script>
