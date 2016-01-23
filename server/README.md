@@ -2,8 +2,7 @@
 
 `PORT`
 
-
 #### Routes
 
-* `/notifications`
-* `/notifications/:id`
+* `/api/notifications`
+* `/api/notifications/:id`

@@ -11,7 +11,9 @@
     },
 
     fetchLatestNotifications: function() {
-      this.set('state.notifications', stub)
+      fetch('/api/notifications', {credentials: 'include'})
+      .then( v => v.json() )
+      .then( v => this.set('state.notifications', v) );
     },
 
     getExternalLink: function(url) {
