@@ -1,4 +1,4 @@
-var stub = [
+[
   {
     "id": "98951011",
     "unread": true,
@@ -2922,4 +2922,4 @@ var stub = [
     "url": "https://api.github.com/notifications/threads/79566101",
     "subscription_url": "https://api.github.com/notifications/threads/79566101/subscription"
   }
-];
+]

@@ -1,15 +1,14 @@
 const Koa = require('koa');
-const _ = require('koa-route');
+const router = require('koa-router')();
 
 const app = new Koa();
 const port = process.env.port || 3000;
+const controllers = require('./controllers');
 
-const routes = {
-  index: ctx => {
-    ctx.body = 'yo';
-  },
-};
+router.get('/notifications/:id', controllers.notifications.get);
+router.get('/notifications', controllers.notifications.list);
 
-app.use(_.get('*', routes.index));
-
+app.use(router.routes());
 app.listen(port);
+
+console.log(`server listening on port ${port}`);
