@@ -12,6 +12,10 @@
       project: Object,
     },
 
+    viewNotification: function(e) {
+      this.stateProvider.setActiveTarget(e.model.item.id);
+    },
+
     sortByTimestamp: function(a, b) {
       a = moment(a).unix();
       b = moment(b).unix();
