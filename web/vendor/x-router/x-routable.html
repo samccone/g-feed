@@ -1,0 +1,43 @@
+<script>
+  var XRouter = XRouter || {};
+
+  XRouter.Routable = {
+
+    beforeModel: function(transition) {
+      return RSVP.Promise.resolve();
+    },
+
+    model: function(params, transition) {
+      return RSVP.Promise.resolve();
+    },
+
+    afterModel: function(model, transition) {
+      return RSVP.Promise.resolve();
+    },
+
+    serialize: function(context) {
+      return RSVP.Promise.resolve();
+    },
+
+    enter: function(model) {
+      return RSVP.Promise.resolve();
+    },
+
+    setup: function(model, transition) {
+      return RSVP.Promise.resolve();
+    },
+
+    exit: function() {
+      return RSVP.Promise.resolve();
+    },
+
+    generate: function() {
+      // FIXME: Why is this running twice?
+      const args = Array.prototype.slice.call(arguments);
+      const router = args[0];
+      const parts = args.slice(1);
+      return router.generate.apply(router, parts);
+    }
+
+  };
+</script>

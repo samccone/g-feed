@@ -1,0 +1,35 @@
+{
+  "name": "x-router",
+  "version": "1.0.3",
+  "authors": [
+    "Anonymous <anonymous@example.com>"
+  ],
+  "description": "An element providing a solution to no problem in particular.",
+  "keywords": [
+    "web-component",
+    "polymer",
+    "seed"
+  ],
+  "main": "x-router.html",
+  "license": "http://polymer.github.io/LICENSE.txt",
+  "homepage": "https://github.com/<USERNAME>/seed-element/",
+  "ignore": [
+    "/.*",
+    "/test/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#2cf80f5a0bcbb2c9b3aab90539d170c40915bcce",
+    "iron-page-url": "polymerelements/iron-page-url#~0.7.0",
+    "iron-elements": "PolymerElements/iron-elements#~1.0.7",
+    "paper-elements": "PolymerElements/paper-elements#~1.0.7",
+    "app-layout": "PolymerLabs/app-layout#~0.0.6",
+    "polymer-experiments": "PolymerLabs/polymer-experiments"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
+    "web-component-tester": "*"
+  },
+  "resolutions": {
+    "polymer": "2cf80f5a0bcbb2c9b3aab90539d170c40915bcce"
+  }
+}

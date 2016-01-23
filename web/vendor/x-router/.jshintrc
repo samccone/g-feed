@@ -1,0 +1,31 @@
+{
+  "esversion": 6,
+  "node": true,
+  "browser": true,
+  "bitwise": true,
+  "camelcase": true,
+  "curly": true,
+  "eqeqeq": true,
+  "immed": true,
+  "indent": 2,
+  "latedef": true,
+  "noarg": true,
+  "quotmark": "single",
+  "undef": true,
+  "unused": true,
+  "newcap": false,
+  "globals": {
+    "Polymer": true,
+    "RSVP": true,
+    "Router": true,
+    "XRouter": true,
+    "ElementProxy": true,
+    "sinon": true,
+    "suite": true,
+    "setup": true,
+    "teardown": true,
+    "test": true,
+    "fixture": true,
+    "expect": true
+  }
+}

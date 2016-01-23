@@ -2,6 +2,7 @@
   "name": "g-notify",
   "dependencies": {
     "polymer": "~1.2.3",
-    "webcomponentsjs": "~0.7.20"
+    "webcomponentsjs": "~0.7.20",
+    "iron-page-url": "polymerelements/iron-page-url#~0.7.1"
   }
 }
