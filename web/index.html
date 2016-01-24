@@ -1,10 +1,9 @@
 <html>
   <head>
     <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
-    <link rel="import" href="vendor/x-router/x-router.html">
-    <link rel="import" href="components/state-provider/state-provider.html">
     <link rel="import" href="components/app-feed/app-feed.html">
     <link rel="import" href="components/notification-detail/notification-detail.html">
+    <link rel="import" href="vendor/x-router/x-router.html">
     <style>
       * {
         padding: 0;
@@ -25,31 +24,12 @@
   <body>
     <header>I am a header</header>
     <main>
-      <template is="dom-bind" id="app">
-        <template is="dom-if" if="[[state.activeTarget]]">
-          <notification-detail state="[[state]]" state-provider="[[stateProvider]]"></notification-detail>
-        </template>
-        <template is="dom-if" if="[[!state.activeTarget]]">
-          <app-feed state="[[state]]" state-provider="[[stateProvider]]"></app-feed>
-        </template>
-        <state-provider id="state-provider" state="{{state}}"></state-provider>
-      </template>
+      <x-router>
+        <x-route path="/" component="app-feed" name="feed" into="main">
+          <x-route path="notification/:id" component="notification-detail" name="detail" into="main"></x-route>
+        </x-route>
+      </x-router>
     </main>
     <footer>hello footer</footer>
   </body>
-  <script>
-    (function() {
-      'use strict';
-
-      let app = document.body.querySelector('#app');
-
-      app.addEventListener('dom-change', () => {
-        app.state = {};
-        app.stateProvider = app.$['state-provider'];
-
-        // todo pull into a better spot
-        app.stateProvider.fetchLatestNotifications();
-      });
-    })();
-  </script>
 </html>

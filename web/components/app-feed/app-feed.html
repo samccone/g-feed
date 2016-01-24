@@ -1,4 +1,6 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../vendor/x-router/x-routable.html">
+<link rel="import" href="../state-provider/state-provider.html">
 <link rel="import" href="x-project/x-project.html">
 
 <dom-module id="app-feed">
@@ -9,9 +11,9 @@
         margin: 16px;
       }
     </style>
-
+    <state-provider id="state-provider" foo="[[foo]]" state="{{state}}"></state-provider>
     <template is="dom-repeat" items="[[getNotifications(state.notifications.*)]]">
-      <x-project project="[[item]]" state="[[state]]" state-provider="[[stateProvider]]"></x-project>
+      <x-project project="[[item]]" router="[[router]]"></x-project>
     </template>
   </template>
 </dom-module>

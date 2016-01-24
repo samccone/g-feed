@@ -2,17 +2,14 @@
   Polymer({
     is: 'notification-detail',
 
-    properties: {
-      state: Object,
-      stateProvider: Object,
-    },
+    behaviors: [XRouter.Routable],
 
     hasActiveTarget: function(activeTarget) {
       return activeTarget !== undefined;
     },
 
     removeActiveTarget: function() {
-      this.stateProvider.removeActiveTarget();
+      //todo
     },
   });
 })();

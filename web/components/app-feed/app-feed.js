@@ -4,10 +4,7 @@
   Polymer({
     is: 'app-feed',
 
-    properties: {
-      state: Object,
-      stateProvider: Object,
-    },
+    behaviors: [XRouter.Routable],
 
     groupNotificationsByProject: function(notifications) {
       notifications = notifications || [];
@@ -37,6 +34,12 @@
 
     getNotifications: function(notifications) {
       return this.groupNotificationsByProject(notifications.base);
+    },
+
+    model: function() {
+      this.$['state-provider'].fetchLatestNotifications();
+      console.log(this.router, this.generate);
+      return Promise.resolve();
     },
   });
 })();

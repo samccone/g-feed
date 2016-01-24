@@ -4,21 +4,21 @@
   Polymer({
     is: 'x-project',
 
+    behaviors: [XRouter.Routable],
+
     properties: {
-      state: Object,
+      project: {
+        type: Object
+      },
 
-      stateProvider: Object,
-
-      project: Object,
-    },
-
-    viewNotification: function(e) {
-      this.stateProvider.setActiveTarget(e.model.item.id);
+      url: {
+        type: String,
+      },
     },
 
     sortByTimestamp: function(a, b) {
-      a = moment(a).unix();
-      b = moment(b).unix();
+      a = moment(a.updated_at).unix();
+      b = moment(b.updated_at).unix();
 
       if (a > b) return -1;
       if (a < b) return 1;

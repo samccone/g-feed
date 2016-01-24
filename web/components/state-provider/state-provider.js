@@ -3,7 +3,11 @@
     is: 'state-provider',
 
     properties: {
-      state: Object,
+      state: {
+        type: Object,
+        value: {},
+        notify: true,
+      },
     },
 
     getNotifications: function(notifications) {

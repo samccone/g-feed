@@ -1,8 +1,10 @@
+<link rel="import" href="../../../vendor/x-router/x-routable.html">
+
 <dom-module is="x-project">
   <template>
     <style>
       :host {
-        display: block;
+       display: block;
         margin: 8px 0;
       }
 
@@ -22,12 +24,13 @@
         border-radius: 3px;
         cursor: pointer;
       }
-
     </style>
     <b class="headline">[[project.name]]</b>
     <ul>
       <template is="dom-repeat" sort="sortByTimestamp" items="[[project.notifications]]">
-        <li class="notification" on-tap="viewNotification">[[item.subject.title]]</li>
+        <li class="notification">
+          <a href="[[generate(router, 'detail', item.id)]]">[[item.subject.title]]</a>
+        </li>
       </template>
     </ul>
   </template>

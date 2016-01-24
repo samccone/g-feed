@@ -1,7 +1,10 @@
 <link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../../vendor/x-router/x-routable.html">
+<link rel="import" href="../state-provider/state-provider.html">
 
 <dom-module id="notification-detail">
   <template>
+    <state-provider id="state-provider" state="[[state]]"></state-provider>
     <h1>[[state.activeTarget]]</h1>
     <button on-tap="removeActiveTarget">Remove active target</button>
   </template>
